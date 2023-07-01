@@ -23,14 +23,13 @@ body {
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-    "header header"
-    "content content";
   grid-auto-rows: minmax(200px, 1fr);
+
+  box-shadow: 4px 4px 8px var(--light-gray);
 }
 
 .item-1 {
-  grid-area: header;
+  grid-column: 1 / -1;
   background: white;
   padding: 35px;
 }
@@ -62,11 +61,14 @@ body {
 
 .item__heading {
   color: var(--cyan);
+  font-size: 1.75rem;
+  font-weight: var(--weight-bold);
   margin: 20px auto;
 }
 
 .item__subheading {
   color: var(--br-yellow);
+  font-size: 1.15rem;
   margin: 10px auto;
 }
 
@@ -81,12 +83,18 @@ body {
 }
 
 .button {
+  color: #fff;
   display: block;
   padding: 12px 24px;
   margin: 15px auto;
   width: 100%;
   border: none;
   background: var(--br-yellow);
-  color: white;
   border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
 }
